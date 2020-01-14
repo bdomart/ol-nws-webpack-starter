@@ -56,8 +56,13 @@ var styleFunction = function (feature) {
 };
 
 function convertCoordinates(x, y) {
-  return transform([x, y], 'EPSG:4326', 'EPSG:3857')
+    return transform([x, y], 'EPSG:4326', 'EPSG:3857')
 }
+
+var features = require("../features.json"); //A remplacer par un appel API
+features.forEach(function (feature) {
+    feature.geometry.coordinates = convertCoordinates(feature.geometry.coordinates[0], feature.geometry.coordinates[1])
+});
 
 var geojsonObject = {
     'type': 'FeatureCollection',
@@ -67,41 +72,7 @@ var geojsonObject = {
             'name': 'EPSG:3857'
         }
     },
-    'features': [
-        {
-            'type': 'Feature',
-            'geometry': {
-                'type': 'Point',
-                'coordinates': convertCoordinates(1.066530, 49.428470)
-            },
-            'properties': {
-                'name': 'Normandie Web School',
-                'description': 'Description Normandie Web School'
-            }
-        },
-        {
-            'type': 'Feature',
-            'geometry': {
-                'type': 'Point',
-                'coordinates': convertCoordinates(1.064756, 49.422390)
-            },
-            'properties': {
-                'name': 'Les Copeaux Numériques',
-                'description': 'Description Les Copeaux Numériques'
-            }
-        },
-        {
-            'type': 'Feature',
-            'geometry': {
-                'type': 'Point',
-                'coordinates': convertCoordinates(1.120096, 49.451086)
-            },
-            'properties': {
-                'name': 'ISD Flaubert',
-                'description': 'Description ISD Flaubert'
-            }
-        }
-    ]
+    'features': features
 };
 
 var vectorSource = new VectorSource({
@@ -177,7 +148,7 @@ map.on('pointermove', function (e) {
 map.on('singleclick', function (e) {
     map.forEachFeatureAtPixel(e.pixel, function (f) {
         var coordinate = e.coordinate;
-        content.innerHTML = '<p>'+f.get('name')+'<br/>'+f.get('description')+'</p>';
+        content.innerHTML = '<p>' + f.get('name') + '<br/>' + f.get('description') + '</p>';
         overlay.setPosition(coordinate);
     });
 });

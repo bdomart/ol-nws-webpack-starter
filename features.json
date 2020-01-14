@@ -1,0 +1,75 @@
+[
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": ["1.065491", "49.428561"]
+    },
+    "properties": {
+      "name": "Seine Innopolis",
+      "description": "Situé au sud de la métropole rouennaise, le pôle d’excellence Seine Innopolis accueille sur près de 10 000 m², dans un ancien bâtiment industriel inscrit à l’inventaire supplémentaire des monuments historiques, les entreprises dédiées au numérique.",
+      "address": "72 Rue de la République",
+      "city": "Le Petit-Quevilly",
+      "postalCode": "76140",
+      "company": [
+        {
+          "name": "42Stores",
+          "codeAPE": "6209Z",
+          "sectors": "Autres activités informatiques",
+          "turnover": [
+            {
+              "amount": 451900.00,
+              "year": "2018"
+            }
+          ],
+          "contract": [
+            {
+              "title": "Alternance Développeur Web",
+              "dates": [
+                {
+                  "start": "2019-10-07",
+                  "end": "2020-10-07"
+                }
+              ],
+              "job": "Développeur Web"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": ["1.087751", "49.445031"]
+    },
+    "properties": {
+      "name": "WEBKY",
+      "description": "Webky à Rouen Conseils, services, maintenance en informatique",
+      "address": "213 Rue Eau de Robec",
+      "city": "Rouen",
+      "postalCode": "76000",
+      "company": [
+        {
+          "name": "WEBKY",
+          "codeAPE": "6201Z",
+          "sectors": "Programmation informatique",
+          "turnover": [],
+          "contract": [
+            {
+              "title": "Stage Développeur Web",
+              "dates": [
+                {
+                  "start": "2019-01-06",
+                  "end": "2020-06-13"
+                }
+              ],
+              "job": "Développeur Web"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
